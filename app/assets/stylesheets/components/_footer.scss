@@ -1,0 +1,15 @@
+footer {
+  width: 100%;
+  position:fixed;
+  left:0px;
+  bottom:0px;
+  z-index:1;
+  background: rgb(26,108,194);
+  background: linear-gradient(106deg, rgba(26,108,194,1) 0%, rgba(0,61,127,1) 53%, rgba(26,108,194,1) 100%);
+
+  img {
+    display: block;
+    width: 150px;
+    margin: 0 auto;
+  }
+}
