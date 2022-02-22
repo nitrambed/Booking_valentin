@@ -4,4 +4,6 @@ class Review < ApplicationRecord
 
   validates :comment, presence: true, length: { minimum: 8 }
   validates :rating, presence: true, numericality: { only_integer: true }
+
+  has_one_attached :photo
 end

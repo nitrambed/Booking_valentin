@@ -1,8 +1,10 @@
-<h1>Valentins#new</h1>
-<p>Find me in app/views/valentins/new.html.erb</p>
+<center><h1>(☞ ͡° ͜ʖ ͡°)☞ Valentins</h1>
+<h2>Toi aussi ajoute ton Val !</h2>
+
+<p>petit coquinou...</p>
 
 <ol>
-    <%= simple_form_for [ @valentin ] do |f| %>
+  <%= simple_form_for [ @valentin ] do |f| %>
     <%= f.label :name %>
     <%= f.text_field :name %>
     <%= f.label :price %>
@@ -12,5 +14,6 @@
     <%= f.label :long_description  %>
     <%= f.text_field :long_description %>
     <%= f.submit %>
-    <% end %>
+  <% end %>
 </ol>
+</center>

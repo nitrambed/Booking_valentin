@@ -1,5 +1,4 @@
-<h2><%= @valentin.name %></h2>
-
+<center><h2><%= @valentin.name %></h2>
 <p><%= @valentin.price %></p>
 <p><%= @valentin.short_description %></p>
 <p><%= @valentin.long_description %></p>
@@ -16,3 +15,13 @@
     </li>
   <% end %>
 </ul>
+
+<p>( ͡⚆ ͜ʖ ͡⚆)</p>
+<%= cl_image_tag("https://res.cloudinary.com/sirchamallow/image/upload/v1645544332/valentin2.jpg", :transformation=>[
+  {:aspect_ratio=>"1.0", :gravity=>"face", :width=>0.6, :zoom=>0.7, :crop=>"thumb"},
+  {:radius=>"max"},
+  {:color=>"brown", :effect=>"outline"},
+  {:color=>"grey", :effect=>"shadow", :x=>30, :y=>55}
+  ])
+
+</center>
