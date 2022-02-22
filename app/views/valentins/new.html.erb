@@ -1,0 +1,13 @@
+<ul>
+    <%= form_for(@valentin) do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.label :price %>
+    <%= f.number_field :price %>
+    <%= f.label :short_description %>
+    <%= f.text_field :short_description %>
+    <%= f.label :long_description  %>
+    <%= f.text_field :long_description %>
+    <%= f.submit %>
+    <% end %>
+</ul>
