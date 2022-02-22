@@ -1,5 +1,6 @@
 class Valentin < ApplicationRecord
   belongs_to :user
+  has_many :reviews, dependent: :destroy
 
   validates :name, presence: true, length: { minimum: 8 }
   validates :price, presence: true, numericality: { only_integer: true }

@@ -1,5 +1,8 @@
-<ul>
-    <%= form_for(@valentin) do |f| %>
+<h1>Valentins#new</h1>
+<p>Find me in app/views/valentins/new.html.erb</p>
+
+<ol>
+    <%= simple_form_for [ @valentin ] do |f| %>
     <%= f.label :name %>
     <%= f.text_field :name %>
     <%= f.label :price %>
@@ -10,4 +13,4 @@
     <%= f.text_field :long_description %>
     <%= f.submit %>
     <% end %>
-</ul>
+</ol>

@@ -1,4 +1,18 @@
 <h2><%= @valentin.name %></h2>
+
 <p><%= @valentin.price %></p>
 <p><%= @valentin.short_description %></p>
 <p><%= @valentin.long_description %></p>
+
+<ul class="list-group">
+  <% @valentin.reviews.each do |review| %>
+    <li class="list-group-item"><%= review.content %></li>
+    <li class="list-group-item">
+      <%= review.content %>
+      <%= link_to "Remove",
+                  review_path(review),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %>
+    </li>
+  <% end %>
+</ul>
