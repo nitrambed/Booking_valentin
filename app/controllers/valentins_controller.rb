@@ -17,4 +17,17 @@ class ValentinsController < ApplicationController
 
     redirect_to valentins_path
   end
+
+  def create
+    @valentin = Valentin.new(valentin)
+    @valentin.save
+
+    redirect_to valentin_path(@valentin)
+  end
+
+  private
+
+  def valentin_params
+    params.require(:valentin).permit(:name, :price, :user_id, :short_description, :long_description)
+  end
 end
