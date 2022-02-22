@@ -1,0 +1,4 @@
+<%= simple_form_for @booking do |f| %>
+  <%= f.input :reservation_at, as: :date, html5: true %>
+  <%= f.submit "Update", class: "btn btn-primary" %>
+<% end %>

@@ -1,0 +1,5 @@
+<h1>Congrats you've booked <%= @booking.valentin.name %></h1>
+<span><%= @booking.reservation_at %></span>
+<%= link_to "All valentins", valentins_path %>
+<%= link_to "Edit my book", edit_booking_path(@booking) %>
+<%= link_to "Delete my book", booking_path(@booking), method: :delete %>
