@@ -1,0 +1,9 @@
+<ul>
+toto
+  <% @valentins.each do |valentin| %>
+    <li><%= valentin.name %></li>
+    <li><%= valentin.price %></li>
+    <li><%= valentin.short_description %></li>
+    <li><%= valentin.long_description %></li>
+  <% end %>
+</ul>
