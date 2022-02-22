@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   resources :valentins, only: [:index, :show, :new, :create, :destroy]
   
   resources :valentins do
-    resources :reviews, only: [:index, :new]
+    resources :reviews, only: [:index, :new, :create]
     resources :bookings, only: [:new]
   end
 

@@ -22,7 +22,7 @@ class ValentinsController < ApplicationController
     @valentin = Valentin.new(valentin_params)
     @valentin.user = current_user
     if @valentin.save
-      redirect_to valentins_path
+      redirect_to valentin_path(@valentin)
     else
       redirect_to new_valentin_path, alert: "fail"
     end
