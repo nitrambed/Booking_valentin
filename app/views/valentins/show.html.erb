@@ -5,9 +5,9 @@
 
 <ul class="list-group">
   <% @valentin.reviews.each do |review| %>
-    <li class="list-group-item"><%= review.content %></li>
+    <li class="list-group-item"><%= review.comment %></li>
     <li class="list-group-item">
-      <%= review.content %>
+      <%= review.comment %>
       <%= link_to "Remove",
                   review_path(review),
                   method: :delete,
@@ -17,11 +17,6 @@
 </ul>
 
 <p>( ͡⚆ ͜ʖ ͡⚆)</p>
-<%= cl_image_tag("https://res.cloudinary.com/sirchamallow/image/upload/v1645544332/valentin2.jpg", :transformation=>[
-  {:aspect_ratio=>"1.0", :gravity=>"face", :width=>0.6, :zoom=>0.7, :crop=>"thumb"},
-  {:radius=>"max"},
-  {:color=>"brown", :effect=>"outline"},
-  {:color=>"grey", :effect=>"shadow", :x=>30, :y=>55}
-  ])
+<%= cl_image_tag @valentin.photo.key, height: 300, width: 400, crop: :fill %>
 
 </center>
