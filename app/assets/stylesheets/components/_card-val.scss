@@ -1,0 +1,9 @@
+.card-val {
+  padding: 2.5rem;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+
+  &--price {
+    font-weight: 700;
+  }
+}
