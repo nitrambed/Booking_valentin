@@ -33,4 +33,8 @@ class ValentinsController < ApplicationController
   def valentin_params
     params.require(:valentin).permit(:name, :price, :short_description, :long_description)
   end
+
+  def article_params
+    params.require(:article).permit(:title, :body, :photo)
+  end
 end

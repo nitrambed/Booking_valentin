@@ -5,70 +5,79 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require "open-uri"
+
+Booking.destroy_all
+Valentin.destroy_all
+User.destroy_all
 
 puts 'Creating seeds...'
 
-  user2 = User.new(
-    first_name: "User",
-    last_name: "Test",
-    email: "user@aaaaaazeaz.fr",
-    password: "coucou"
-  )
-  user2.save!
+user1 = User.create!(
+  first_name: "User",
+  last_name: "Test",
+  email: "alex@gmail.com",
+  password: "password"
+)
 
-  valentin = Valentin.new(
-    name:    "Valentino",
-    price: 20,
-    user_id: 1,
-    short_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    long_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+user2 = User.create!(
+  first_name: "User",
+  last_name: "Test",
+  email: "user@aaaaaazeaz.fr",
+  password: "coucou"
+)
 
-  )
-  valentin.save!
+file = URI.open('https://res.cloudinary.com/sirchamallow/image/upload/v1645544332/valentin2.jpg')
+valentin = Valentin.new(
+  name:    "Valentino",
+  price: 20,
+  user: user2,
+  short_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  long_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
 
+)
+valentin.save!
+valentin.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
-  valentina = Valentin.new(
-    name:    "Valentina",
-    price: 30,
-    user_id: 2,
-    short_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    long_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+file = URI.open('https://res.cloudinary.com/sirchamallow/image/upload/v1645544332/valentin1.jpg')
+valentina = Valentin.new(
+  name:    "Valentina",
+  price: 30,
+  user: user2,
+  short_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  long_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
 
-  )
-  valentina.save!
+)
+valentina.save!
+valentina.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
+file = URI.open('https://res.cloudinary.com/sirchamallow/image/upload/v1645544332/valentin3.jpg')
+val = Valentin.new(
+  name:    "Le Val de l'enfer",
+  price: 300,
+  user: user2,
+  short_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  long_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+)
+val.save!
+val.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
 
-  val = Valentin.new(
-    name:    "Le Val de l'enfer",
-    price: 300,
-    user_id: 1,
-    short_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    long_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+booking = Booking.create!(
+  user: user1,
+  valentin: valentin,
+  reservation_at: "01/01/2021"
+)
 
-  )
-  val.save!
+booking1 = Booking.create!(
+  user: user1,
+  valentin: valentina,
+  reservation_at: "01/01/2021"
+)
 
-  booking = Booking.new(
-    user_id: 1,
-    valentin_id: 3,
-    reservation_at: "01/01/2021"
-  )
-  booking.save!
-
-
-  booking1 = Booking.new(
-    user_id: 2,
-    valentin_id: 1,
-    reservation_at: "01/01/2021"
-  )
-  booking1.save!
-
-
-  booking2 = Booking.new(
-    user_id: 1,
-    valentin_id: 2,
-    reservation_at: "01/01/2021"
-  )
-  booking2.save!
+booking2 = Booking.create!(
+  user: user1,
+  valentin: val,
+  reservation_at: "01/01/2021"
+)
 
 puts 'Finished!'
