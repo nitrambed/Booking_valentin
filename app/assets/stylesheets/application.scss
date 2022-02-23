@@ -12,3 +12,12 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+.fa-star {
+  color:  #FFD700;
+}
+
+.review-rating {
+  cursor:    pointer;
+  font-size: 2rem;
+}
