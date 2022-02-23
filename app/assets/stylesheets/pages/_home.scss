@@ -1,1 +1,21 @@
 // Specific CSS for your home-page
+.home-banner {
+  background-image: linear-gradient(106deg, rgba(26,108,194,0.4) 0%, rgba(0,61,127,0.4) 53%, rgba(26,108,194,0.4) 100%),
+                    asset_url("home_banner.jpeg");
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: $color-white;
+
+  h1 {
+    font-size: 6rem;
+    text-shadow: 1px ​1px 15px rgba(0,0,0,0.85);
+  }
+
+  p {
+    font-size: 3rem;
+    text-shadow: 1px ​1px 15px rgba(0,0,0,0.85);
+  }
+}
