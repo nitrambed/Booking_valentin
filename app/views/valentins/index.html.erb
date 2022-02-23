@@ -8,7 +8,9 @@
         <div class="col-12 col-sm-6 col-lg-4">
           <div class="card-val shadow text-center">
             <h3><%= valentin.name %></h3>
-            <%= cl_image_tag valentin.photo.key, height: 200, width:300, crop: :fill %>
+            <div class="d-flex justify-content-center">
+              <%= cl_image_tag valentin.photo.key, height: 200, width:300, crop: :fill if valentin.photo.attached? %>
+            </div>
             <p><%= valentin.short_description %></p>
             <p class="card-val--price"><%= valentin.price %>€</p>
             <%= link_to "Découvrir", valentin_path(valentin), class: "btn-val btn-val--primary" %>
