@@ -13,7 +13,7 @@
             <%= cl_image_tag valentin.photo.key, :client_hints=>true, :sizes=>"100vw", :transformation=>[
                 {:aspect_ratio=>"16:9", :crop=>"fill"},
                 {:width=>"auto", :crop=>"scale"},
-                {:width=>1000, :crop=>"limit"}], class: "img-fluid" %>
+                {:width=>1000, :crop=>"limit"}], class: "img-fluid" if valentin.photo.attached? %>
           </div>
           <div class="card-val--content">
             <h3><%= valentin.name %></h3>
