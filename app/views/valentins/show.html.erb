@@ -16,21 +16,31 @@
   </div>
 </div>
 
-<!-- Reviews de Valentins -->
-<div class="container my-5">
-  <h2 class="text-center my-5">Les commentaires duVal'</h2>
-  <div class="row my-3">
-    <ul class="list-group">
-      <% @valentin.reviews.each do |review| %>
-        <li class="list-group-item"><%= review.comment %></li>
-        <li class="list-group-item">
-          <%= review.comment %>
-          <%= link_to "Remove",
-                      review_path(review),
-                      method: :delete,
-                      data: { confirm: "Are you sure?" } %>
-        </li>
+<p>
+  Moyenne : <%= @average_rating %>
+</p>
+<div class="reviews">
+  <% @reviews.each do |review| %>
+    <p>
+      <% Review::AUTHORIZED_RATINGS.each do |number| %>
+        <i class="fa<%= (number > review.rating) ? 'r' : 's' %> fa-star"></i>
       <% end %>
-    </ul>
-  </div>
+      <%= review.comment %>
+    </p>
+  <% end %>
+</div>
+
+
+<div class="review">
+  <h2>Laissez une éVALuation</h2>
+  <%= simple_form_for [@valentin, @review] do |f| %>
+    <%= f.input :comment %>
+    <%= f.input :rating, as: :hidden  %>
+    <div class="my-3">
+      <% Review::AUTHORIZED_RATINGS.each do |index| %>
+        <i id="<%= index %>" class="review-rating far fa-star"></i>
+      <% end %>
+    </div>
+    <%= f.submit class: "btn btn-primary", value: "VAL-ider" %>
+  <% end %>
 </div>
