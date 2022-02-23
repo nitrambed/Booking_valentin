@@ -1,19 +1,19 @@
-<center><h1>(☞ ͡° ͜ʖ ͡°)☞ Valentins</h1>
-<h2>Toi aussi ajoute ton Val !</h2>
+<div class="container my-5">
 
-<p>petit coquinou...</p>
+  <h1 class="text-center my-5">Valentins</h1>
+  <h2 class="text-center my-5">Toi aussi ajoute ton Val !</h2>
 
-<ol>
-  <%= simple_form_for [ @valentin ] do |f| %>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-    <%= f.label :price %>
-    <%= f.number_field :price %>
-    <%= f.label :short_description %>
-    <%= f.text_field :short_description %>
-    <%= f.label :long_description  %>
-    <%= f.text_field :long_description %>
-    <%= f.submit %>
+
+  <%= simple_form_for @valentin do |f| %>
+    <%= f.error_notification %>
+      <%= f.input :name, required: true, autofocus: true%>
+      <%= f.input :price, required: true %>
+      <%= f.input :short_description, required: true %>
+      <%= f.input :long_description, required: true %>
+        <%= f.input :photo, as: :file,
+                      required: false,
+                      autofocus: true %>
+
+      <%= f.submit "EnVALer c'est peser", class:'btn-val btn-val--primary' %>
   <% end %>
-</ol>
-</center>
+</div>

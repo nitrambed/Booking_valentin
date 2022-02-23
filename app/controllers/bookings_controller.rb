@@ -54,8 +54,4 @@ class BookingsController < ApplicationController
   def booking_params
     params.require(:booking).permit(:reservation_at, :valentin_id)
   end
-
-  def article_params
-    params.require(:article).permit(:title, :body, :photo)
-  end
 end

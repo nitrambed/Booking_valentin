@@ -41,7 +41,7 @@ valentin.photo.attach(io: file, filename: 'valentin2.jpg', content_type: 'image/
 file = URI.open('https://res.cloudinary.com/sirchamallow/image/upload/v1645544332/valentin1.jpg')
 valentina = Valentin.new(
   name:    "Valentina",
-  price: 30,
+  price: 42,
   user: user2,
   short_description: "Valentina vous propose un service d’accueil et d’assistance à la hauteur de vos attentes ;)",
   long_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
@@ -54,7 +54,7 @@ val = Valentin.new(
   name:    "Le Val de l'enfer",
   price: 300,
   user: user2,
-  short_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  short_description: "Louer Le Val de l'enfer et immergez-vous dans votre ville. Il vous transportera au plus profon de votre cœur avec ses 2 000 ans d’histoire et vous éblouira par sa beauté",
   long_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
 )
 val.save!
