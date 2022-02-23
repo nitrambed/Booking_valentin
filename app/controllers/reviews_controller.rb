@@ -11,6 +11,7 @@ class ReviewsController < ApplicationController
 
   def destroy
     @review = Review.find(params[:id])
+    @review.user = current_user
     @review.destroy
     redirect_to valentin_path(@review.valentin)
   end
@@ -23,7 +24,7 @@ class ReviewsController < ApplicationController
     @review.user = current_user
     @review.valentin = @valentin
     if @review.save
-      redirect_to valentin_reviews_path
+      redirect_to valentin_path(@valentin)
     else
       render :new
     end
