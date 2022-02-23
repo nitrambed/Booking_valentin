@@ -1,24 +1,21 @@
-<center><h2><%= @valentin.name %></h2>
-<p><%= @valentin.price %></p>
-<p><%= @valentin.short_description %></p>
-<p><%= @valentin.long_description %></p>
+<!-- Card d'un Valentin -->
+<div class="container my-5 justify-content-center">
+  <h2 class="text-center my-5">Votre Val'</h2>
+  <div class="row my-3 justify-content-center">
+    <div class="col-12" class="text-center justify-content-center">
+        <ul class="list-group shadow text-center d-flex justify-content-center">
+          <h3><%= @valentin.name %></h3>
+          <div class="d-flex justify-content-center">
+            <%= cl_image_tag @valentin.photo.key, height: 200, width:300, crop: :fill %>
+          </div>
+          <p><%= @valentin.short_description %></p>
+          <p><%= @valentin.long_description %></p>
+          <p class="card-val--price"><%= @valentin.price %>€</p>
+        </ul>
+    </div>
+  </div>
+</div>
 
-<ul class="list-group">
-  <% @valentin.reviews.each do |review| %>
-    <li class="list-group-item">
-      <%= review.comment %>
-      <%= link_to "Remove",
-                  review_path(review),
-                  method: :delete,
-                  data: { confirm: "Are you sure?" } %>
-    </li>
-  <% end %>
-</ul>
-
-<p>( ͡⚆ ͜ʖ ͡⚆)</p>
-<%= cl_image_tag @valentin.photo.key, height: 300, width: 400, crop: :fill %>
-
-</center>
 <p>
   Moyenne : <%= @average_rating %>
 </p>
@@ -32,8 +29,6 @@
     </p>
   <% end %>
 </div>
-
-
 
 
 <div class="review">
