@@ -4,7 +4,7 @@
     &:visited {
         text-transform: uppercase;
         text-decoration: none;
-        padding: 1rem 3rem;
+        padding: 0.5rem 2.5rem;
         display: inline-block;
         border-radius: $border-radius;
         transition: all .2s;
@@ -40,13 +40,45 @@
     }
 
     &--secondary {
-      background-color: $color-cta;
-      color: $color-white;
+      background-color: $color-white;
+      color: $color-cta !important;
+      border: 1px solid $color-cta;
 
       &::after {
-          background-color: $color-cta;
+          background-color: $color-white;
       }
   }
 
+}
 
+.btn-val--tertiary {
+
+  &,
+    &:link,
+    &:visited {
+    display: inline-block;
+    text-decoration: none;
+    color: $color-primary !important;
+    transition: all .2s;
+    position: relative;
+    font-size: $font-size-base;
+  }
+
+  &::after {
+    display:block;
+    content: '';
+    border-bottom: solid 2px $color-primary;
+    transform: scaleX(0);
+    transition: transform 250ms ease-in-out;
+  }
+
+  &:hover::after {
+    transform: scaleX(1);
+  }
+}
+
+.btn-find-val {
+  background-color: $color-primary;
+  color: $color-white !important;
+  border-radius: 5px;
 }

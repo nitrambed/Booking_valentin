@@ -17,3 +17,5 @@ ActiveStorage.start()
 
 import "controllers"
 import "bootstrap"
+
+console.log("toto")
