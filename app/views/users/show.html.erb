@@ -1,16 +1,16 @@
-<-- USER / INDEX.HTML >
+<!-- USER / SHOW.HTML -->
 
-<-- ! Description du profil >
+<!--  Description du profil -->
 <section class="section about-section gray-bg" id="about">
   <div class="container">
     <div class="row align-items-center justify-content-around flex-row-reverse">
       <div class="col-lg-6">
         <div class="about-text">
           <h3 class="dark-color">My profile</h3>
-          <h4 class="theme-color">UI / UX Designer &amp; Web Developer</h4>
+          <h4 class="theme-color">Web Developer of le Wagon</h4>
           <p>I design and develop services for customers of all sizes, specializing in creating stylish, modern websites, web services and online stores. My passion is to design digital user experiences through the bold interface and meaningful interactions.</p>
           <div class="btn-bar">
-            <a class="px-btn theme" href="#">View bookings</a>
+            <%= link_to "Nouvelle réservation", valentins_path, class: "nav-link btn-find-val font-weight-bold" %>
           </div>
         </div>
        </div>
@@ -18,16 +18,16 @@
           <div class="about-img">
             <img src="https://bootdey.com/img/Content/avatar/avatar1.png">
           </div>
-         /div>
+        </div>
       </div>
     </div>
 </section>
 
-<-- ! Liste des réservation des Vals >
+<!--  Liste des réservation des Vals -->
 <div class="container wrapper my-5">
   <h1 class="text-center my-5">Hola! Voici toutes les réservation de vos Vals</h1>
   <div class="row my-3">
-    <% @users.bookings.each do |booking| %>
+    <% @user.bookings.each do |booking| %>
       <div class="col-12 col-sm-6 col-lg-3">
         <div class="d-flex justify-content-center">
           <%= cl_image_tag(
