@@ -16,12 +16,12 @@
             <%= link_to "Trouver un valentin", valentins_path, class: "nav-link btn-find-val font-weight-bold" %>
           </li>
           <li class="nav-item ">
-            <%= link_to "Mon profile", "#", class: "nav-link font-weight-bold" %>
+            <%= link_to "Mon profil", "#", class: "nav-link font-weight-bold" %>
           </li>
           <li class="nav-item dropdown">
             <%= image_tag "val.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Mon profil", users_path, class: "dropdown-item" %>
+              <%= link_to "Mon profil", user_path(current_user), class: "dropdown-item" %>
               <%= link_to "Créer un Valentin", new_valentin_path, class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
