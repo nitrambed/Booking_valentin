@@ -38,20 +38,24 @@ valentin = Valentin.new(
 )
 valentin.save!
 valentin.photo.attach(io: file, filename: 'valentin2.jpg', content_type: 'image/jpg')
+file = URI.open('https://res.cloudinary.com/sirchamallow/image/upload/v1645716116/Capture_d_e%CC%81cran_2022-02-24_a%CC%80_16.21.51_tdwjet.png')
+valentin.marker_photo.attach(io: file, filename: 'valentin3.jpg', content_type: 'image/jpg')
 
-file = URI.open('https://res.cloudinary.com/sirchamallow/image/upload/v1645708788/273047015_1008803049728066_239459524054551337_n_sqfocm.jpg')
+file = URI.open('https://res.cloudinary.com/sirchamallow/image/upload/c_scale,h_479,w_281/v1645708788/273047015_1008803049728066_239459524054551337_n_sqfocm.jpg')
 valentina = Valentin.new(
   name:    "Valentina",
   price: 42,
   user: user2,
   short_description: "Valentina vous propose un service d’accueil et d’assistance à la hauteur de vos attentes ;)",
   long_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-  adress: "10 avenue des champs-élysées, 75008 Paris"
+  adress: "10 Avenue des champs-élysées, 75008 Paris"
 )
 valentina.save!
 valentina.photo.attach(io: file, filename: 'valentin1.jpg', content_type: 'image/jpg')
+file = URI.open('https://res.cloudinary.com/sirchamallow/image/upload/v1645714780/Capture_d_e%CC%81cran_2022-02-24_a%CC%80_15.34.02_u9umtg.png')
+valentina.marker_photo.attach(io: file, filename: 'valentin3.jpg', content_type: 'image/jpg')
 
-file = URI.open('https://res.cloudinary.com/sirchamallow/image/upload/v1645544332/valentin1.jpg')
+file = URI.open('https://res.cloudinary.com/sirchamallow/image/upload/v1645715984/Capture_d_e%CC%81cran_2022-02-24_a%CC%80_16.19.24_t1jgn5.png')
 val_la_menace = Valentin.new(
   name:    "Val la menace",
   price: 666,
@@ -62,6 +66,8 @@ val_la_menace = Valentin.new(
 )
 val_la_menace.save!
 val_la_menace.photo.attach(io: file, filename: 'valentin1.jpg', content_type: 'image/jpg')
+file = URI.open('https://res.cloudinary.com/sirchamallow/image/upload/v1645716025/Capture_d_e%CC%81cran_2022-02-24_a%CC%80_16.20.20_vhzmqn.png')
+val_la_menace.marker_photo.attach(io: file, filename: 'valentin3.jpg', content_type: 'image/jpg')
 
 file = URI.open('https://res.cloudinary.com/sirchamallow/image/upload/v1645708925/273483106_920684385297224_9048733898247143280_n_ujotba.jpg')
 a_val = Valentin.new(
@@ -74,8 +80,10 @@ a_val = Valentin.new(
 )
 a_val.save!
 a_val.photo.attach(io: file, filename: 'valentin1.jpg', content_type: 'image/jpg')
+file = URI.open('https://res.cloudinary.com/sirchamallow/image/upload/v1645714767/Capture_d_e%CC%81cran_2022-02-24_a%CC%80_15.34.31_vekbep.png')
+a_val.marker_photo.attach(io: file, filename: 'valentin3.jpg', content_type: 'image/jpg')
 
-file = URI.open('https://res.cloudinary.com/sirchamallow/image/upload/v1645709003/unnamedfffff_pplqfd.jpg')
+file = URI.open('https://res.cloudinary.com/sirchamallow/image/upload/w_1000,ar_16:9,c_fill,g_auto,e_sharpen/v1645709003/unnamedfffff_pplqfd.jpg')
 val_pls = Valentin.new(
   name:    "Val en pls",
   price: 3,
@@ -86,19 +94,22 @@ val_pls = Valentin.new(
 )
 val_pls.save!
 val_pls.photo.attach(io: file, filename: 'valentin1.jpg', content_type: 'image/jpg')
+file = URI.open('https://res.cloudinary.com/sirchamallow/image/upload/v1645714775/Capture_d_e%CC%81cran_2022-02-24_a%CC%80_15.34.17_msns0o.png')
+val_pls.marker_photo.attach(io: file, filename: 'valentin3.jpg', content_type: 'image/jpg')
 
 file = URI.open('https://res.cloudinary.com/sirchamallow/image/upload/v1645708038/Image_d_iOS_bxxd9m.png')
 val = Valentin.new(
   name:    "Le Val de l'enfer",
   price: 300,
   user: user2,
-  adress: "20 rue Saint Nicolas, 59000 Lille",
+  adress: "20 Rue Saint Nicolas, 59000 Lille",
   short_description: "Louer Le Val de l'enfer et immergez-vous dans votre ville. Il vous transportera au plus profon de votre cœur avec ses 2 000 ans d’histoire et vous éblouira par sa beauté",
   long_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
 )
 val.save!
 val.photo.attach(io: file, filename: 'valentin3.jpg', content_type: 'image/jpg')
-# val.marker_image.attach(io: file, filename: 'valentin3.jpg', content_type: 'image/jpg')
+file = URI.open('https://res.cloudinary.com/sirchamallow/image/upload/v1645714769/Capture_d_e%CC%81cran_2022-02-24_a%CC%80_14.44.20_iefecu.png')
+val.marker_photo.attach(io: file, filename: 'valentin3.jpg', content_type: 'image/jpg')
 
 booking = Booking.create!(
   user: user1,
