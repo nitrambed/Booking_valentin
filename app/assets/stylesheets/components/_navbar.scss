@@ -8,10 +8,12 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: 60px;
 }
 
 .logo-text {
   text-transform: uppercase;
   font-family: $headers-font;
+  font-size: 2rem;
+  color: $color-primary;
 }

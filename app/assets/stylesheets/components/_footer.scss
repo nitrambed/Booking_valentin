@@ -1,7 +1,7 @@
 footer {
   width: 100%;
-  background: rgb(26,108,194);
-  background: linear-gradient(106deg, rgba(26,108,194,1) 0%, rgba(0,61,127,1) 53%, rgba(26,108,194,1) 100%);
+  background-color: $color-secondary;
+  // background: linear-gradient(106deg, $color-primary 0%, $color-secondary 53%, $color-primary 100%);
 
   img {
     display: block;
