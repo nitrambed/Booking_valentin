@@ -13,4 +13,15 @@ class Valentin < ApplicationRecord
 
   has_one_attached :photo
   has_one_attached :marker_photo
+
+
+  include PgSearch::Model
+
+  pg_search_scope :search_by_name_and_description,
+
+    against: [ :name, :short_description ],
+    using: {
+      tsearch: { prefix: true }
+    }
+  
 end

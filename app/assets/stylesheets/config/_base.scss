@@ -9,6 +9,9 @@
 body {
   box-sizing: border-box;
   background-color: white;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 ::selection {

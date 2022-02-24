@@ -1,0 +1,27 @@
+.search-container {
+  position: relative;
+  width: 50%;
+
+}
+
+.form-submit {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 50px;
+  background: transparent;
+  border: transparent;
+  font-size: 20px;
+  color: $color-primary;
+  cursor: pointer;
+  outline: 0;
+}
+
+.form-control:focus {
+  color: #0E0000;
+  background-color: #FFF;
+  border-color: $color-primary;
+  outline: 0;
+  box-shadow: 0 0 0.25rem rgba($color-primary, .5);
+}
