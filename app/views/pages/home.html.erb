@@ -1,15 +1,17 @@
 <div class="home-banner">
   <h1>Louer votre Valentin</h1>
   <p>Animez toutes vos soirées avec votre Val préféré !</p>
-  <div class="row search">
+  <div class="search-container mt-5">
     <%= form_tag search_path, method: :get do %>
       <%= text_field_tag :query,
         params[:query],
         class: "form-control",
         placeholder: "Ecris des mots-clefs ici pour trouver un val !"
       %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
-<% end %>
+      <%= button_tag type: 'submit', class: "form-submit" do %>
+        <i class="fa fa-search" aria-hidden="true"></i>
+      <% end %>
+    <% end %>
   </div>
 </div>
 
