@@ -1,4 +1,7 @@
 class Valentin < ApplicationRecord
+  geocoded_by :adress
+  after_validation :geocode
+
   belongs_to :user
   has_many :reviews, dependent: :destroy
   has_many :bookings, dependent: :destroy
@@ -9,4 +12,5 @@ class Valentin < ApplicationRecord
   validates :long_description, presence: true, length: { maximum: 5000 }
 
   has_one_attached :photo
+  has_one_attached :marker_photo
 end
