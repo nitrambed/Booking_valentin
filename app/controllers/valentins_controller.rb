@@ -1,6 +1,17 @@
 class ValentinsController < ApplicationController
   def index
     @valentins = Valentin.all
+
+    @valentins = Valentin.geocoded
+
+    @markers = @valentins.map do |valentin|
+      {
+        lat: valentin.latitude,
+        lng: valentin.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { valentin: valentin }),
+        image_url: helpers.asset_url("val.png")
+      }
+    end
   end
 
   def show

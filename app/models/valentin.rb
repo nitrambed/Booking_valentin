@@ -1,4 +1,7 @@
 class Valentin < ApplicationRecord
+  geocoded_by :adress
+  after_validation :geocode
+
   belongs_to :user
   has_many :reviews, dependent: :destroy
   has_many :bookings, dependent: :destroy

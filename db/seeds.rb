@@ -33,7 +33,8 @@ valentin = Valentin.new(
   price: 20,
   user: user2,
   short_description: "Valentino est très dynamique sur le plan culturel et sportif, du à ses nombreuses rencontres tout au long de l’année.",
-  long_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+  long_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+  adress: "11 Rue de la Gerbe, 69002 Lyon"
 )
 valentin.save!
 valentin.photo.attach(io: file, filename: 'valentin2.jpg', content_type: 'image/jpg')
@@ -44,7 +45,8 @@ valentina = Valentin.new(
   price: 30,
   user: user2,
   short_description: "Valentina vous propose un service d’accueil et d’assistance à la hauteur de vos attentes ;)",
-  long_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+  long_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+  adress: "10 avenue des champs-élysées, 75008 Paris"
 )
 valentina.save!
 valentina.photo.attach(io: file, filename: 'valentin1.jpg', content_type: 'image/jpg')
@@ -55,7 +57,8 @@ val = Valentin.new(
   price: 300,
   user: user2,
   short_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  long_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+  long_description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+  adress: "20 rue Saint Nicolas, 59000 Lille"
 )
 val.save!
 val.photo.attach(io: file, filename: 'valentin3.jpg', content_type: 'image/jpg')
