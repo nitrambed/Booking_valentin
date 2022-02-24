@@ -1,25 +1,28 @@
-<center><h1>La liste de nos Valentins</h1>
-<h2>ᕕ( ͡° ͜ʖ ͡° )ᕗ</h2>
+<div class="container wrapper my-5">
 
-<div class="container my-5">
-  <h2 class="text-center my-5">Voici nos Valentins actuellement disponible</h2>
-    <div class="row my-3">
-      <% @valentins.each do |valentin| %>
-        <div class="col-12 col-sm-6 col-lg-4">
-          <div class="card-val shadow text-center">
+  <h1 class="text-center my-5">Hé hé ! Voilà tous les Vals disponibles dans notre super base de données</h1>
+  <div class="row my-3">
+    <% @valentins.each do |valentin| %>
+      <div class="col-12 col-sm-6 col-lg-3">
+        <div class="card-val shadow text-center">
+          <div class="card-val--img">
+            <%= cl_image_tag valentin.photo.key, :client_hints=>true, :sizes=>"100vw", :transformation=>[
+                {:aspect_ratio=>"16:9", :crop=>"fill"},
+                {:width=>"auto", :crop=>"scale"},
+                {:width=>1000, :crop=>"limit"}], class: "img-fluid" if valentin.photo.attached? %>
+          </div>
+          <div class="card-val--content">
             <h3><%= valentin.name %></h3>
-            <%= cl_image_tag valentin.photo.key, height: 200, width:300, crop: :fill %>
             <p><%= valentin.short_description %></p>
-            <p class="card-val--price"><%= valentin.price %>€</p>
+            <p class="card-val--content__price"><%= valentin.price %>€</p>
             <%= link_to "Découvrir", valentin_path(valentin), class: "btn-val btn-val--primary" %>
           </div>
         </div>
-      <% end %>
-    </div>
-    <div style="width: 100%; height: 600px;"
-  data-controller="mapbox"
-  data-mapbox-markers-value="<%= @markers.to_json %>"
-  data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+      </div>
+    <% end %>
+  </div>
+  <div style="width: 100%; height: 600px;"
+       data-controller="mapbox"
+       data-mapbox-markers-value="<%= @markers.to_json %>"
+       data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 </div>
-
-</center>
