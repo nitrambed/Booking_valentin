@@ -4,4 +4,13 @@ class PagesController < ApplicationController
   def home
     @valentins = Valentin.all
   end
+
+  def search
+    if params[:query].present?
+      puts params[:query]
+      @valentins = Valentin.search_by_name_and_description(params[:query])
+    else
+      @valentins = Valentin.all
+    end
+  end
 end

@@ -9,4 +9,13 @@ class Valentin < ApplicationRecord
   validates :long_description, presence: true, length: { maximum: 5000 }
 
   has_one_attached :photo
+
+  include PgSearch::Model
+
+  pg_search_scope :search_by_name_and_description,
+
+    against: [ :name, :short_description ],
+    using: {
+      tsearch: { prefix: true }
+    }
 end
