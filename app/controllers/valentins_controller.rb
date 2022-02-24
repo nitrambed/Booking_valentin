@@ -17,7 +17,6 @@ class ValentinsController < ApplicationController
   def destroy
     @valentin = Valentin.find(params[:id])
     @valentin.destroy
-
     redirect_to valentins_path
   end
 
@@ -34,10 +33,6 @@ class ValentinsController < ApplicationController
   private
 
   def valentin_params
-    params.require(:valentin).permit(:name, :price, :short_description, :long_description)
-  end
-
-  def article_params
-    params.require(:article).permit(:title, :body, :photo)
+    params.require(:valentin).permit(:name, :price, :short_description, :long_description, :photo)
   end
 end

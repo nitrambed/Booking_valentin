@@ -35,8 +35,4 @@ class ReviewsController < ApplicationController
   def review_params
     params.require(:review).permit(:rating, :comment)
   end
-
-  def article_params
-    params.require(:article).permit(:title, :body, :photo)
-  end
 end
