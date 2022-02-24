@@ -6,10 +6,13 @@
       <div class="col-12 col-sm-6 col-lg-3">
         <div class="card-val shadow text-center">
           <div class="card-val--img">
-            <%= cl_image_tag valentin.photo.key, :client_hints=>true, :sizes=>"100vw", :transformation=>[
-                {:aspect_ratio=>"16:9", :crop=>"fill"},
-                {:width=>"auto", :crop=>"scale"},
-                {:width=>1000, :crop=>"limit"}], class: "img-fluid" if valentin.photo.attached? %>
+            <%= cl_image_tag valentin.photo.key, sizes: "100vw",
+                                                 class: "img-fluid",
+                                                 :transformation=>[{
+                                                   aspect_ratio: "16:9",
+                                                   crop: "fill",
+                                                   gravity: :face
+                                                 }] if valentin.photo.attached? %>
           </div>
           <div class="card-val--content">
             <h3><%= valentin.name %></h3>
