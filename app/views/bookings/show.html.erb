@@ -1,5 +1,18 @@
-<h1>Congrats you've booked <%= @booking.valentin.name %></h1>
-<span><%= @booking.reservation_at %></span>
-<%= link_to "All valentins", valentins_path %>
-<%= link_to "Edit my book", edit_booking_path(@booking) %>
-<%= link_to "Delete my book", booking_path(@booking), method: :delete %>
+<div class="container my-5">
+  <div class="container">
+    <div class="row align-items-center justify-content-around flex-row-reverse">
+      <div class="col-lg-5 text-center">
+        <h1><%= @booking.valentin.name %></h1>
+        <h2>Votre VAL pour vous servir</h2>
+        <p><strong><span><%= @booking.reservation_at %></span></strong></p>
+        <p><%= link_to "All valentins", valentins_path %></p>
+        <p><%= link_to "Edit my book", edit_booking_path(@booking) %></p>
+        <p><%= link_to "Delete my book", booking_path(@booking), method: :delete %></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p>Nous déclinons toute responsabilité à l’égard de toute forme de préjudice ou de perte subis à la suite de toute utilisation que vous feriez du VAL pour toute utilisation commerciale ou autre forme d’utilisation non autorisée par les présentes VALues.</p>
+      </div>    
+    </div>
+   </div>
+</div>
