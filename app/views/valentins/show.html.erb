@@ -14,7 +14,14 @@
           <h3><%= @valentin.name %></h3>
           <p><%= @valentin.long_description %></p>
           <p class="card-val--content__price"><%= @valentin.price %>€</p>
-          <%= link_to "Je réserval !", new_valentin_booking_path(@valentin), class: "btn-val btn-val--primary" %>
+        </div>
+        <div class="card-val--booking">
+          <h3 class="mb-3">Vas-y réserve, mais reste tranquille</h3>
+          <%= simple_form_for @booking do |f| %>
+            <%= f.hidden_field :valentin_id, value: @valentin.id %>
+            <%= f.input :reservation_at, as: :date, html5: true, label: false %>
+            <%= f.submit "Réser-val", class:  "input-form btn-val btn-val--primary mt-3" %>
+          <% end %>
         </div>
       </div>
     </div>

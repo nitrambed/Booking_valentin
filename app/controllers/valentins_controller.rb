@@ -16,6 +16,8 @@ class ValentinsController < ApplicationController
 
   def show
     @valentin = Valentin.find(params[:id])
+    @booking = Booking.new
+    @bookings = @valentin.bookings
     @review = Review.new
     @reviews = @valentin.reviews
     @average_rating = @reviews.any? ? @reviews.average(:rating).round(2) : "No rating yet"
