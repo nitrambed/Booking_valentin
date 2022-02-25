@@ -1,8 +1,15 @@
-<h1>Reviews#new</h1>
-<p>Find me in app/views/reviews/new.html.erb</p>
-
-<%= simple_form_for [ @valentin, @review ] do |f| %>
-  <%= f.input :rating %>
-  <%= f.input :comment %>
-  <%= f.submit "Submit review", class: "btn btn-primary" %>
-<% end %>
+<div class="container my-5">
+  <div class="review">
+    <h2>Laissez une éVALuation</h2>
+    <%= simple_form_for [@valentin, @review] do |f| %>
+      <%= f.input :comment, label: false %>
+      <%= f.input :rating, as: :hidden  %>
+      <div class="my-3">
+        <% Review::AUTHORIZED_RATINGS.each do |index| %>
+          <i id="<%= index %>" class="review-rating far fa-star"></i>
+        <% end %>
+      </div>
+      <%= f.submit class: "input-form btn-val btn-val--primary", value: "VAL-ider" %>
+    <% end %>
+  </div>
+</div>

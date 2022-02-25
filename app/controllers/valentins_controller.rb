@@ -34,7 +34,7 @@ class ValentinsController < ApplicationController
   def destroy
     @valentin = Valentin.find(params[:id])
     @valentin.destroy
-    redirect_to valentins_path
+    redirect_to user_path(current_user.id)
   end
 
   def create
