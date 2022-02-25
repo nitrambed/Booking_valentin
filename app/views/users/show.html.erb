@@ -5,12 +5,11 @@
     <div class="row align-items-center justify-content-around flex-row-reverse">
       <div class="col-lg-6">
         <div class="about-text">
-          <h3 class="orange-color">My profile : <%= @user.first_name %></h3>
-          <h3 class="orange-color">My profile : <%= @user.last_name %></h3>
-          <h4 class="theme-color">Email : <%= @user.email %></h4>
-          <p>Le terme escort, importé de l'anglais, désigne une certaine catégorie de travailleurs, plus précisément les personnes n'exerçant pas sur la voie publique, leur activité relevant dès lors d'un actiivté dite « indoor ».</p>
+          <h3 class="orange-color"><%= @user.first_name %></h3>
+          <h3 class="orange-color"><%= @user.last_name %></h3>
+          <h4 class="theme-color"><%= @user.email %></h4>
           <div class="btn-bar">
-            <%= link_to "Nouvelle réservation", valentins_path, class: "nav-link btn-find-val font-weight-bold" %>
+            <%= link_to "Nouvelle réserVALtion", valentins_path, class: "nav-link btn-find-val font-weight-bold" %>
           </div>
         </div>
       </div>
