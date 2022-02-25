@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   resources :valentins, only: [:index, :show, :new, :create, :destroy] do
     resources :reviews, only: [:index, :new, :create]
-    resources :bookings, only: [:new]
+    # resources :bookings, only: [:new]
   end
 
   resources :reviews, only: [:show, :destroy]

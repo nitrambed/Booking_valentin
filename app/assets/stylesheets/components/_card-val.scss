@@ -2,6 +2,7 @@
   border-radius: $border-radius;
   box-shadow: $box-shadow;
   margin-bottom: 3rem;
+  background-color: $color-white;
 
   &--img {
     width: 100%;
@@ -12,7 +13,11 @@
   }
 
   &--content {
-    padding: 2rem;
+    flex-direction: column;
+    padding: 2.5rem 1rem;
+    min-height: 30rem;
+    display: flex;
+    justify-content: space-around;
 
     h3 {
       font-size: 2.5rem;
@@ -24,6 +29,13 @@
       font-family: $headers-font;
     }
 
+  }
+
+  &--booking {
+    background-color: #eee;
+    padding: 1.5rem 2rem;
+    border-bottom-left-radius: $border-radius;
+    border-bottom-right-radius: $border-radius;
   }
 
 }

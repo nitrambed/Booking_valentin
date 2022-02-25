@@ -2,6 +2,9 @@ class ValentinsController < ApplicationController
   def index
     @valentins = Valentin.all
 
+    @reviews = @valentin.reviews
+    @average_rating = @reviews.any? ? @reviews.average(:rating).round(2) : "No rating yet"
+
     @valentins = Valentin.geocoded
 
     @markers = @valentins.map do |valentin|
@@ -16,6 +19,8 @@ class ValentinsController < ApplicationController
 
   def show
     @valentin = Valentin.find(params[:id])
+    @booking = Booking.new
+    @bookings = @valentin.bookings
     @review = Review.new
     @reviews = @valentin.reviews
     @average_rating = @reviews.any? ? @reviews.average(:rating).round(2) : "No rating yet"

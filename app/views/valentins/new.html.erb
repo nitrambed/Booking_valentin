@@ -1,19 +1,21 @@
 <div class="container my-5">
 
-  <h1 class="text-center my-5">Valentins</h1>
-  <h2 class="text-center my-5">Toi aussi ajoute ton Val !</h2>
+  <h1 class="text-center my-5">Mettre en location un Valentin ?</h1>
+  <h2 class="text-center my-5">Toi aussi ajoute ton Val et gagane de la thune pour acheter des petites bières !</h2>
 
 
   <%= simple_form_for @valentin do |f| %>
     <%= f.error_notification %>
-      <%= f.input :name, required: true, autofocus: true%>
-      <%= f.input :price, required: true %>
-      <%= f.input :adress, required: true %>
-      <%= f.input :short_description, required: true %>
-      <%= f.input :long_description, required: true %>
-        <%= f.input :photo, as: :file,
+      <%= f.input :name, required: true, autofocus: true, label: false, placeholder: "Nom du val", class: "my-3"%>
+      <%= f.input :price, required: true, label: false, placeholder: "Ici c'est le prix de la loc !", class: "my-3" %>
+      <%= f.input :adress, required: true, label: false, placeholder: "Où ce Val est-il dispo ? Son adresse quoi .. %>
+      <%= f.input :short_description, required: true, label: false, placeholder: "Un petite description pour attirer les clients ...", class: "my-3" %>
+      <%= f.input :long_description, required: true, label: false, placeholder: "Et ici une graaaande description !", class: "my-3" %>
+      <%= f.input :photo, as: :file,
                       required: false,
-                      autofocus: true %>
-      <%= f.submit "EnVALer c'est peser", class:'btn-val btn-val--primary' %>
+                      autofocus: true,
+                      label: false,
+                      placeholder: "Une photo vendeuse de ton val", class: "my-3" %>
+      <%= f.submit "EnVALer c'est peser", class:'input-form btn-val btn-val--primary my-5' %>
   <% end %>
 </div>
