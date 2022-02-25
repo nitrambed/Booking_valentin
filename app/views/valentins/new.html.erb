@@ -8,9 +8,10 @@
     <%= f.error_notification %>
       <%= f.input :name, required: true, autofocus: true, label: false, placeholder: "Nom du val", class: "my-3"%>
       <%= f.input :price, required: true, label: false, placeholder: "Ici c'est le prix de la loc !", class: "my-3" %>
+      <%= f.input :adress, required: true, label: false, placeholder: "Où ce Val est-il dispo ? Son adresse quoi .. %>
       <%= f.input :short_description, required: true, label: false, placeholder: "Un petite description pour attirer les clients ...", class: "my-3" %>
       <%= f.input :long_description, required: true, label: false, placeholder: "Et ici une graaaande description !", class: "my-3" %>
-        <%= f.input :photo, as: :file,
+      <%= f.input :photo, as: :file,
                       required: false,
                       autofocus: true,
                       label: false,

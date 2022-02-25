@@ -1,5 +1,27 @@
-<h1>Here are all the bookings of Valentins</h1>
-<% @bookings.each do |booking| %>
-  <%= booking.valentin.name %>
-  <%= booking.reservation_at %>
-<% end %>
+<div class="container wrapper my-5">
+  <h1 class="text-center my-5">Hola! Voici toutes les réservation de vos Vals</h1>
+  <div class="row my-3">
+    <% @bookings.each do |booking| %>
+      <div class="col-12 col-sm-6 col-lg-3">
+        <div class="d-flex justify-content-center">
+          <%= cl_image_tag(
+            booking.valentin.photo.key, 
+            sizes: "100vw",
+            class: "img-fluid",
+            :transformation=>[{
+              aspect_ratio: "16:9",
+              crop: "fill",
+              gravity: :face
+            }]
+          ) if booking.valentin.photo.attached? %>
+        </div>
+        <div class="card-val shadow text-center">
+          <div class="card-val--content">
+            <h3><%= booking.valentin.name %></h3>
+            <p><%= booking.reservation_at %></p>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
