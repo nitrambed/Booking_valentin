@@ -23,5 +23,13 @@ class Valentin < ApplicationRecord
     using: {
       tsearch: { prefix: true }
     }
-  
+
+  def moyenne
+    if self.reviews.any?
+      self.reviews.average(:rating).round(2)
+    else
+      "No rating yet"
+    end
+  end
+
 end

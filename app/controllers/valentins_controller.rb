@@ -2,17 +2,19 @@ class ValentinsController < ApplicationController
   def index
     @valentins = Valentin.all
 
-    @reviews = @valentin.reviews
-    @average_rating = @reviews.any? ? @reviews.average(:rating).round(2) : "No rating yet"
+    # @valentins = Valentin.geocoded
 
-    @valentins = Valentin.geocoded
-
-    @markers = @valentins.map do |valentin|
+    @markers = @valentins.geocoded.map do |valentin|
+      marker_url = if valentin.marker_photo.attached?
+                    Rails.application.routes.url_helpers.rails_blob_path(valentin.marker_photo, only_path: true)
+                  else
+                    helpers.asset_url("val.png")
+                  end
       {
         lat: valentin.latitude,
         lng: valentin.longitude,
         info_window: render_to_string(partial: "info_window", locals: { valentin: valentin }),
-        image_url: Rails.application.routes.url_helpers.rails_blob_path(valentin.marker_photo, only_path: true)
+        image_url: marker_url
       }
     end
   end
@@ -23,7 +25,6 @@ class ValentinsController < ApplicationController
     @bookings = @valentin.bookings
     @review = Review.new
     @reviews = @valentin.reviews
-    @average_rating = @reviews.any? ? @reviews.average(:rating).round(2) : "No rating yet"
   end
 
   def new

@@ -29,7 +29,7 @@
           </div>
           <div class="card-val--content">
             <h3><%= valentin.name %></h3>
-            <h4>Avis: <%= valentin.reviews.count %> - Moyenne: <%= @average_rating %></h4>
+            <h4>Avis: <%= valentin.reviews.count %> - Moyenne: <%= valentin.moyenne %></h4>
             <p><%= valentin.short_description %></p>
             <p class="card-val--content__price"><%= valentin.price %>€</p>
             <%= link_to "Découvrir", valentin_path(valentin), class: "btn-val btn-val--primary" %>
