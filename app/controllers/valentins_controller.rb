@@ -2,6 +2,9 @@ class ValentinsController < ApplicationController
   def index
     @valentins = Valentin.all
 
+    @reviews = @valentin.reviews
+    @average_rating = @reviews.any? ? @reviews.average(:rating).round(2) : "No rating yet"
+
     @valentins = Valentin.geocoded
 
     @markers = @valentins.map do |valentin|
