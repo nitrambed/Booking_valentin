@@ -1,20 +1,20 @@
 <!-- USER / SHOW.HTML -->
-
-<!--  Description du profil -->
-<section class="section about-section gray-bg" id="about">
+<div class="container my-5">
+  <!--  Description du profil -->
   <div class="container">
     <div class="row align-items-center justify-content-around flex-row-reverse">
       <div class="col-lg-6">
         <div class="about-text">
-          <h3 class="dark-color">My profile</h3>
-          <h4 class="theme-color">Web Developer of le Wagon</h4>
-          <p>Le terme escort, importé de l'anglais, désigne une certaine catégorie de travailleurs, plus précisément les personnes n'exerçant pas sur la voie publique, leur activité relevant dès lors d'un actiivté dite « indoor »..</p>
+          <h3 class="orange-color">My profile : <%= @user.first_name %></h3>
+          <h3 class="orange-color">My profile : <%= @user.last_name %></h3>
+          <h4 class="theme-color">Email : <%= @user.email %></h4>
+          <p>Le terme escort, importé de l'anglais, désigne une certaine catégorie de travailleurs, plus précisément les personnes n'exerçant pas sur la voie publique, leur activité relevant dès lors d'un actiivté dite « indoor ».</p>
           <div class="btn-bar">
             <%= link_to "Nouvelle réservation", valentins_path, class: "nav-link btn-find-val font-weight-bold" %>
           </div>
         </div>
       </div>
-      <!--  Avatar du profil -->
+  <!--  Avatar du profil -->
         <div class="col-lg-5 text-center">
           <div class="about-img">
             <% if @user.photo.attached? %>
@@ -23,46 +23,55 @@
             <% end%>
           </div>
         </div>
-      <!--  Upload nouvel avatar du profil -->
-      <div>
+      </div>
+    </div>
+  </div>
+
+  <!--  Editer le profil -->
+  <div class="container">
+    <div class="row align-items-center justify-content-around flex-row-reverse">
+      <div class="col-lg-6">
         <%= simple_form_for @user do |f| %>
           <%= f.error_notification %>
-          <p>Uploader une nouvelle image de profil</p>
-              <%= f.input :photo, as: :file,
-                            required: false,
-                            autofocus: true %>
+            <p>Editer vos informations</p>
+            <%= f.input :first_name %>
+            <%= f.input :last_name %>
+            <%= f.input :email %>
+            <%= f.input :photo, as: :file,
+                        required: false,
+                        autofocus: true %>
             <%= f.submit "EnVALer c'est peser", class:'btn-val btn-val--primary' %>
         <% end %>
       </div>
     </div>
   </div>
-</section>
 
-<!--  Liste des réservation des Vals -->
-<div class="container wrapper my-5">
-  <h1 class="text-center my-5">Hola! Voici toutes les réservation de vos Vals</h1>
-  <div class="row my-3">
-    <% @user.bookings.each do |booking| %>
-      <div class="col-12 col-sm-6 col-lg-3">
-        <div class="d-flex justify-content-center">
-          <%= cl_image_tag(
-            booking.valentin.photo.key, 
-            sizes: "100vw",
-            class: "img-fluid",
-            :transformation=>[{
-              aspect_ratio: "16:9",
-              crop: "fill",
-              gravity: :face
-            }]
-          ) if booking.valentin.photo.attached? %>
-        </div>
-        <div class="card-val shadow text-center">
-          <div class="card-val--content">
-            <h3><%= booking.valentin.name %></h3>
-            <p><%= booking.reservation_at %></p>
+  <!--  Liste des réservation des Vals -->
+  <div class="container wrapper my-5">
+    <h1 class="text-center my-5">Hola! Voici toutes les réservation de vos Vals</h1>
+    <div class="row my-3">
+      <% @user.bookings.each do |booking| %>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="d-flex justify-content-center">
+            <%= cl_image_tag(
+              booking.valentin.photo.key, 
+              sizes: "100vw",
+              class: "img-fluid",
+              :transformation=>[{
+                aspect_ratio: "16:9",
+                crop: "fill",
+                gravity: :face
+              }]
+            ) if booking.valentin.photo.attached? %>
+          </div>
+          <div class="card-val shadow text-center">
+            <div class="card-val--content">
+              <h3><%= booking.valentin.name %></h3>
+              <p><%= booking.reservation_at %></p>
+            </div>
           </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
