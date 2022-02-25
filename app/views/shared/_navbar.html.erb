@@ -19,7 +19,13 @@
             <%= link_to "Hello, #{current_user.first_name} !", "#", class: "nav-link font-weight-bold" %>
           </li>
           <li class="nav-item dropdown">
-            <%= avatar_user %>
+            <%= avatar_user({
+                              class: "avatar dropdown-toggle",
+                              id: "navbarDropdown",
+                              data: { bs_toggle: "dropdown" },
+                              'aria-haspopup': true,
+                              'aria-expanded': false
+                            }) %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Mon profil", user_path(current_user), class: "dropdown-item" %>
               <%= link_to "Créer un Valentin", new_valentin_path, class: "dropdown-item" %>
